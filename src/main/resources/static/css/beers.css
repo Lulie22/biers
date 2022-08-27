@@ -1,0 +1,80 @@
+
+body {
+    background-color: #ffdf76;
+    color: #4e211c;
+    font-family: sans-serif;
+    /*margin-left: 2em;*/
+
+}
+nav ul {
+
+    background-color: darkgreen;
+    padding: 0.5em 0;
+}
+nav li{
+    display: inline-block;
+    padding: 0.4em 0;
+}
+nav li a{
+    color: white;
+}
+
+div ul li {
+    text-decoration: none;
+    list-style: none;
+}
+
+div ul li a {
+    text-decoration: none;
+    color: #4e211c;
+}
+
+div ul li:nth-child(odd){
+    background-color: lightgrey;
+
+}
+div ul li:nth-child(even){
+    background-color: gold;
+}
+dd,dt{
+    margin-left: 0;
+}
+dt{
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+button{
+    margin-top: 0.5em;
+}
+form input{
+    margin-bottom: 0.5em;
+}
+form label input{
+    display: block;
+}
+tfoot tr{
+    text-align: right;
+}
+.right{
+    text-align: right;
+}
+table tbody td{
+    text-align: right;
+
+}
+.delete{
+    color: red;
+    padding-left: 1em;
+}
+label span {
+    background-color: red;
+    color:white;
+    font-weight: bold;
+    padding-left:0.5em;
+    padding-right: 0.5em;
+}
+.fout{
+    background-color: red;
+    color:white;
+    font-weight: bold;
+}

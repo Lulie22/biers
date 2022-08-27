@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Brouwers')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1>Welkom in het huis van Belgische bieren</h1>
+
+<img class="image" th:src="@{/images/beers.jpg}" alt="bieren">
+<!--<div th:if="${param.werknemerNietGevonden}" class="fout">-->
+<!--  Werknemer niet gevonden-->
+<!--</div>-->
+<h3>We hebben momenteel <th:block th:text="${aantal}"></th:block> bieren</h3>
+</body>
+</html>

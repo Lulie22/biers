@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title= 'Bevestigd')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1 th:if="${param.toegevoegd}">Je winkelwagentje is bevestigd als bestelbon
+    <span th:text="${param.toegevoegd}"></span></h1>
+<th:block th:if="${bestelbon}" th:object="${bestelbon}">
+    <h3>Uw levering adres :</h3>
+    <dl>
+        <dt>Naam</dt>
+        <dd th:text="*{naam}"></dd>
+        <dt>Straat</dt>
+        <dd th:text="*{straat}"></dd>
+        <dt>Huis nummer</dt>
+        <dd th:text="*{huisNr}"></dd>
+        <dt>Postcode</dt>
+        <dd th:text="*{postcode}"></dd>
+        <dt>Gemeente</dt>
+        <dd th:text="*{gemeente}"></dd>
+    </dl>
+</th:block>
+</body>
+</html>

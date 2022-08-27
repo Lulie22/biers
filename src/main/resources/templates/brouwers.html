@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Brouwers')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1>Brouwers</h1>
+
+<h1 class="fout" th:if="${brouwers.isEmpty()}">Geen brouwers gevonden:</h1>
+
+<div>
+    <ul>
+        <li th:each="brouwer : ${brouwers}" th:object="${brouwer}">
+            <a th:text="*{naamGemeente}" th:href="@{/brouwers/{id}/bieren(id=*{id})}"></a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

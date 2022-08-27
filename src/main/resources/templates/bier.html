@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Bier')"></head>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h1 th:if="not ${bier}" class="fout">Op dit moment is dit bier niet beschikbaar:
+    <th:block th:text="${id}"></th:block>
+</h1>
+
+<div th:if="${bier}" th:object="${bier}">
+    <h1 th:text="*{naam}"></h1>
+    <dl>
+        <dt>Alcohol</dt>
+        <dd th:text="|*{alcohol} %|"></dd>
+        <dt>Prijs</dt>
+        <dd th:text="*{{prijs}}"></dd>
+    </dl>
+    <form th:object="${aantalBierForm}" method="post" th:action="@{/bieren/{id}/toevoegen(id=${bier.id})}">
+        <label>Aantal:<span th:errors="*{aantal}"></span>
+            <input th:field="*{aantal}" autofocus required type="number" min="1"></label>
+
+        <button>Toevoegen</button>
+    </form>
+</div>
+
+</body>
+</html>
